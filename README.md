@@ -8,10 +8,11 @@ Java console app putting messages on an Azure Service Bus queue, triggering an A
 - https://docs.microsoft.com/en-us/azure/developer/java/sdk/java-sdk-azure-get-started
 - https://search.maven.org/artifact/com.microsoft.azure/azure-servicebus/3.3.0/jar
 
-
 ---
 
-## Azure Service Bus
+## Azure Provisioning
+
+### Azure Service Bus
 
 Create an Azure Service Bus account, with a queue named **events**.
 
@@ -25,6 +26,15 @@ Then capture the **Connection String** in Azure Portal as shown below:
 Then set the following two environment variables in your system; the Java app will use these.
 - AZURE_DEMO_SERVICEBUS_CONN_STRING
 - AZURE_DEMO_SERVICEBUS_QUEUE
+
+### Azure CosmosDB
+
+Create an Azure CosmosDB account with the SQL API.
+Within the account create a database named **dev** with an **events** collection
+which has the partition-key attribute **/pk**.
+
+Shell and AZ CLI script **automation/az_cli/cosmos_sql.sh** can be used to provision
+your CosmosDB account; just alter the values in **automation/env.sh** first.
 
 ---
 
@@ -87,6 +97,8 @@ These are put on the Azure Service Queue as messages.
 
 ### Compiling
 
+This demo Java application consists of only one *.java file; App.java.
+
 ```
 $ ./build.sh
 
@@ -127,23 +139,26 @@ done
 
 ## Azure Logic App
 
-Manually provision an Azure Logic App.
+Manually provision an Azure Logic App, then use the UI designer to create the following:
 
 ![logic-app-designer](img/logic-app-designer.png)
+
+You can reference the code in file **logicapp/code.json**, or even paste it into
+your Logic App Code View.  You'll have to change the values of /subscriptions/<your-subscription-id>/
+to your actual Azure subscription Id.
+
+You'll need to configure two specific connections in your Logic App:
+1) To your Service Bus instance
+2) to your CosmosDB instance
+
+Then, execute the above Java program with **./run.sh** to cause messages to be put
+on the Service Bus queue, which will trigger the Logic App.
 
 ---
 
 ## Azure CosmosDB
 
-Create an Azure CosmosDB account with the SQL API.
-Within the account create a database named **dev** with an **events** collection
-which has the partition-key attribute **/pk**.
-
-Shell and AZ CLI script **automation/az_cli/cosmos_sql.sh** can be used to provision
-your CosmosDB account; just alter the values in **automation/env.sh** first.
-
 ### Sample Document inserted by the Logic App
-
 
 ```
 {
