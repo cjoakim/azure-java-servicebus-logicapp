@@ -1,3 +1,18 @@
+# ===== manual entries =====
+
+# eclipse ide files and directories
+.classpath
+.project
+.settings/
+
+# java directories
+**/log/
+**/target/
+**/tmp/
+**/build_date.txt
+
+# ===== Generated entries =====
+
 # Compiled class file
 *.class
 
