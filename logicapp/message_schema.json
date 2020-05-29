@@ -1,0 +1,27 @@
+{
+    "properties": {
+       "Member": {
+          "type": "object",
+          "properties": {
+             "name": {
+                "type": "string"
+             },
+             "city": {
+                "type": "string"
+             },
+             "country": {
+                "type": "string"
+             },
+             "iata_code": {
+                "type": "string"
+             },
+             "id": {
+                "type": "string"
+             },
+             "pk": {
+                "type": "string"
+             }
+          }
+       }
+    }
+ }
