@@ -6,10 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-import com.microsoft.azure.servicebus.IMessageReceiver;
-import com.microsoft.azure.servicebus.IMessageSender;
 import com.microsoft.azure.servicebus.Message;
-import com.microsoft.azure.servicebus.MessageHandlerOptions;
 import com.microsoft.azure.servicebus.QueueClient;
 import com.microsoft.azure.servicebus.ReceiveMode;
 import com.microsoft.azure.servicebus.primitives.ConnectionStringBuilder;
@@ -17,8 +14,8 @@ import com.microsoft.azure.servicebus.primitives.ServiceBusException;
 
 
 /**
- * Hello world!
- *
+ * Java Client using the Azure Service Bus SDK to put messages on a queue.
+ * @author Chris Joakim, Microsoft, 2020/05/29
  */
 public class App {
 	
