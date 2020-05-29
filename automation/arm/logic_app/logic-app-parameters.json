@@ -1,0 +1,45 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "logicAppApiVersion": {
+            "value": "2016-10-01"
+        },
+        "workflowName": {
+            "value": "cjoakimlogicaci"
+        },
+        "workflowLocation": {
+            "value": "eastus"
+        },
+        "workflowSchema": {
+            "value": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#"
+        },
+        "tags": {
+            "value": {}
+        },
+        "diagnosticsApiVersion": {
+            "value": "2016-09-01"
+        },
+        "omsWorkspaceId": {
+            "value": "/subscriptions/61761119-d249-4507-90c6-a16517e1874c/resourcegroups/cjoakimloganalytics/providers/microsoft.operationalinsights/workspaces/cjoakimloganalytics1"
+        },
+        "omsSolutionApiVersion": {
+            "value": "2015-11-01-preview"
+        },
+        "resourceDeploymentApiVersion": {
+            "value": "2017-05-10"
+        },
+        "omsSolutionLocation": {
+            "value": "eastus"
+        },
+        "omsSolutionName": {
+            "value": "LogicAppsManagement"
+        },
+        "omsWorkspaceName": {
+            "value": "cjoakimloganalytics1"
+        },
+        "omsWorkspaceResourceGroupName": {
+            "value": "cjoakimloganalytics"
+        }
+    }
+}
